@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Authentic 3D Glass Block Effect */
+  .glass-panel {
+    background: rgba(11, 15, 25, 0.45); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    box-shadow: 
+      inset 1px 1px 1px rgba(255, 255, 255, 0.05), 
+      0 8px 32px 0 rgba(0, 0, 0, 0.4); 
+    transition: all 0.5s ease;
+  }
+  
+  .glass-panel:hover {
+    background: rgba(11, 15, 25, 0.6);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    box-shadow: 
+      inset 1px 1px 1px rgba(255, 255, 255, 0.15),
+      0 0 40px rgba(147, 51, 234, 0.2);
+  }
+
+  .glass-panel-emerald:hover {
+    background: rgba(11, 15, 25, 0.6);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    box-shadow: 
+      inset 1px 1px 1px rgba(255, 255, 255, 0.15),
+      0 0 40px rgba(52, 211, 153, 0.2);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 via-white to-purple-400;
+  }
+}
+
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0b12; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #9333ea; }
+
+/* Wide Tech Grid matching your photo */
+.bg-grid-pattern {
+  background-size: 100px 100px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+}
